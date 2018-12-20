@@ -14,14 +14,6 @@ export default {
       required: false,
       default: ''
     },
-    loadingImage: {
-      type: String,
-      required: true
-    },
-    errorImage: {
-      type: String,
-      required: true
-    },
     imageErrorCallback: {
       type: Function,
       required: false,
@@ -48,13 +40,6 @@ export default {
   },
   computed: {
     computedStyle() {
-      if (this.imageState === 'loading') {
-        return 'background-image: url(' + this.loadingImage + ');'
-      }
-
-      if (this.imageState === 'error') {
-        return 'background-image: url(' + this.errorImage + ');'
-      }
 
       if (this.imageState === 'loaded') {
         return 'background-image: url(' + this.asyncImage.src + '); background-size: ' + this.backgroundSize
